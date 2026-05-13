@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: message,
                 parse_mode: "HTML"
             }),
-        }).catch(() => {});
+        }).catch(() => { });
     }
 
     // ================= CUSTOM ALERT (CHIROYLI) =================
@@ -126,6 +126,17 @@ document.addEventListener("DOMContentLoaded", function () {
         show("home");
         updateUser();
     };
+
+
+    // ================== GOTO REGISTER/LOGIN ==================
+    document.getElementById("goToRegisterBtn")?.addEventListener("click", () => {
+        show("register");
+    });
+
+    document.getElementById("backToLoginBtn")?.addEventListener("click", () => {
+        show("login");
+    });
+
 
     // ================= FULLNAME FIX =================
     function updateUser() {
