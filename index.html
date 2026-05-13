@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+    <title>Konus - Geometriya olami</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="bg-[#11071F]">
+    <div class="app-container" id="appContainer">
+      <!-- LOGO -->
+      <div style="padding: 20px 20px 0 20px">
+        <div class="logo-wrapper">
+          <div class="logo-icon bg-[#6024b5]">I</div>
+          <div class="logo-text text-[#6024b5]">ntegra</div>
+        </div>
+      </div>
+
+      <!-- SAHIFALAR -->
+
+      <!-- 1. KIRISH / LOGIN -->
+      <div id="loginPage" class="page active">
+        <h2 class="text-2xl font-bold text-black">Kirish</h2>
+        <p style="color: #777; margin-bottom: 24px">Integratsiyalashgan ta’lim platformasi</p>
+
+        <div
+          id="loginError"
+          style="color: red; margin-bottom: 12px; display: none"
+        >
+          Login yoki parol noto‘g‘ri
+        </div>
+
+        <div class="input-group">
+          <label>Login</label>
+          <input type="text" id="loginUsername" placeholder="Login" />
+        </div>
+        <div class="input-group">
+          <label>Parol</label>
+          <input type="password" id="loginPassword" placeholder="••••••••" />
+        </div>
+
+        <button class="orange-btn bg-[#6024b5] shadow-md shadow-blue-900" id="loginBtn">Kirish</button>
+        <p style="text-align: center; margin: 20px 0">Hisobingiz yo‘qmi?</p>
+        <button class="orange-outline-btn  shadow-md shadow-red-400" id="goToRegisterBtn">
+          Ro‘yxatdan o‘tish
+        </button>
+      </div>
+
+      <!-- 2. REGISTRATSIYA -->
+      <div id="registerPage" class="page">
+        <h2 style="margin-bottom: 8px">Ro‘yxatdan o‘tish</h2>
+        <p style="color: #777; margin-bottom: 24px">Ma'lumotlarni kiriting</p>
+
+        <div class="input-group">
+          <label>Ism Familiya</label>
+          <input type="text" id="regFullname" placeholder="Ali Valiyev" />
+        </div>
+        <div class="input-group">
+          <label>Login</label>
+          <input type="text" id="regLogin" placeholder="login" />
+        </div>
+        <div class="input-group">
+          <label>Parol</label>
+          <input type="password" id="regPassword" placeholder="parol" />
+        </div>
+
+        <button class="orange-btn" id="registerBtn">Ro‘yxatdan o‘tish</button>
+        <p style="text-align: center; margin: 20px 0">
+          Allaqachon hisobingiz bormi?
+        </p>
+        <button class="orange-outline-btn" id="backToLoginBtn">
+          Kirish sahifasiga
+        </button>
+      </div>
+
+      <!-- 3. ASOSIY (HOME) -->
+      <div id="homePage" class="page">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <h2>Assalomu alaykum, <span id="userDisplayName">User</span>!</h2>
+          <button
+            id="logoutBtn"
+            style="
+              background: none;
+              border: none;
+              font-size: 24px;
+              cursor: pointer;
+            "
+          >
+            🚪
+          </button>
+        </div>
+
+        <div class="menu-grid">
+          <div class="menu-card" id="gotoSection1">
+            <div class="menu-emoji">🔤</div>
+            <span class="menu-title">1. Geometriya "Alifbosi"</span>
+          </div>
+          <div class="menu-card" id="gotoSection2">
+            <div class="menu-emoji">📐</div>
+            <span class="menu-title">2. Yassi shakllar</span>
+          </div>
+          <div class="menu-card" id="gotoSection3">
+            <div class="menu-emoji">🧊</div>
+            <span class="menu-title">3. Hajmli shakllar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. GEOMETRIYA ALIFBOSI (1-bo'lim) -->
+      <div id="alifboPage" class="page">
+        <button class="back-home orange-outline-btn" id="backFromAlifbo">
+          ← Ortga
+        </button>
+        <h2>Geometriya alifbosi</h2>
+
+        <div class="cards-grid">
+          <div class="concept-card">
+            <div class="concept-icon">⏺️</div>
+            <div class="concept-text">
+              <h3>Nuqta</h3>
+              <p>
+                Geometriyaning eng kichik bo‘lagi. Lotincha A, B, C. Misol:
+                yulduz, xaritadagi shahar.
+              </p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">📏</div>
+            <div class="concept-text">
+              <h3>Kesma</h3>
+              <p>
+                Ikki nuqtani tutashtiruvchi chekli chiziq. Misol: qalam,
+                o‘chirg‘ich cheti.
+              </p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">➖</div>
+            <div class="concept-text">
+              <h3>To‘g‘ri chiziq</h3>
+              <p>Cheksiz davom etadi, boshi-oxiri yo‘q. Misol: ufq chizig‘i.</p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">☀️</div>
+            <div class="concept-text">
+              <h3>Nur</h3>
+              <p>Boshlanish nuqtasi bor, oxiri yo‘q. Misol: quyosh nuri.</p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">⚡</div>
+            <div class="concept-text">
+              <h3>Siniq chiziq</h3>
+              <p>Kesmalarning ketma-ket ulanishi. Misol: zina, chaqmoq.</p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">✂️</div>
+            <div class="concept-text">
+              <h3>Burchak</h3>
+              <p>
+                Bir nuqtadan chiqqan ikkita nur. Misol: ochilgan qaychi, soat
+                millari.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="orange-btn" id="startTestBtn1">
+          📝 Test ishlash (30 daqiqa)
+        </button>
+      </div>
+
+      <!-- 5. YASSI SHAKLLAR (2-bo'lim) -->
+      <div id="yassiPage" class="page">
+        <button class="back-home orange-outline-btn" id="backFromYassi">
+          ← Ortga
+        </button>
+        <h2>Yassi shakllar</h2>
+
+        <div class="info-box">
+          <strong>📐 Yassi shakllar</strong> – ikki o‘lchamli (bo‘yi va eni
+          bor), qalinligi (balandligi) bo‘lmagan geometrik shakllar.
+        </div>
+
+        <h3>📐 Uchburchaklar</h3>
+        <p>
+          Uchburchaklar tomonlari va burchaklariga qarab turlarga bo‘linadi:
+        </p>
+        <div class="table-container">
+          <table>
+            <tr>
+              <th>Turkum</th>
+              <th>Shakl turi</th>
+              <th>Tavsifi</th>
+            </tr>
+            <tr>
+              <td rowspan="3">Tomoniga ko‘ra</td>
+              <td>Teng tomonli</td>
+              <td>Barcha tomonlari va burchaklari teng (60°)</td>
+            </tr>
+            <tr>
+              <td>Teng yonli</td>
+              <td>Ikki tomoni o‘zaro teng</td>
+            </tr>
+            <tr>
+              <td>Turli tomonli</td>
+              <td>Hamma tomonlari uzunligi turlicha</td>
+            </tr>
+            <tr>
+              <td rowspan="3">Burchagiga ko‘ra</td>
+              <td>To‘g‘ri burchakli</td>
+              <td>Bitta burchagi 90° ga teng</td>
+            </tr>
+            <tr>
+              <td>O‘tkir burchakli</td>
+              <td>Barcha burchaklari 90° dan kichik</td>
+            </tr>
+            <tr>
+              <td>O‘tmas burchakli</td>
+              <td>Bitta burchagi 90° dan katta</td>
+            </tr>
+          </table>
+        </div>
+
+        <h3>🔲 To‘rtburchaklar</h3>
+        <p>
+          To‘rtburchaklar - to‘rtta tomon va to‘rtta uchga ega bo‘lgan
+          ko‘pburchaklar:
+        </p>
+        <div class="cards-grid">
+          <div class="concept-card">
+            <div class="concept-icon">⬛</div>
+            <div class="concept-text">
+              <h3>Kvadrat</h3>
+              <p>Barcha tomonlari teng va barcha burchaklari 90°.</p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">🧱</div>
+            <div class="concept-text">
+              <h3>To‘g‘ri to‘rtburchak</h3>
+              <p>
+                Qarama-qarshi tomonlari teng va parallel, barcha burchaklari
+                90°.
+              </p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">💎</div>
+            <div class="concept-text">
+              <h3>Romb</h3>
+              <p>
+                Barcha tomonlari teng, lekin burchaklari har doim ham 90° emas.
+              </p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">▱</div>
+            <div class="concept-text">
+              <h3>Parallelogramm</h3>
+              <p>Qarama-qarshi tomonlari parallel va teng.</p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">📊</div>
+            <div class="concept-text">
+              <h3>Trapetsiya</h3>
+              <p>Faqat ikki tomoni o‘zaro parallel.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>⭕ Aylana va Doira</h3>
+        <div class="cards-grid">
+          <div class="concept-card">
+            <div class="concept-icon">⭕</div>
+            <div class="concept-text">
+              <h3>Aylana</h3>
+              <p>
+                Markazdan bir xil uzoqlikdagi nuqtalar to‘plami (faqat chiziq).
+              </p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">🔴</div>
+            <div class="concept-text">
+              <h3>Doira</h3>
+              <p>
+                Aylana bilan chegaralangan tekislik qismi (ichki sohasi bilan).
+              </p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">🥚</div>
+            <div class="concept-text">
+              <h3>Ellips</h3>
+              <p>Bir oz cho‘zilgan "tuxumsimon" aylana shakli.</p>
+            </div>
+          </div>
+        </div>
+        <div class="formula">Aylana uzunligi: L = 2πR</div>
+
+        <h3>🔷 Boshqa ko‘pburchaklar</h3>
+        <div class="cards-grid">
+          <div class="concept-card">
+            <div class="concept-icon">⬟</div>
+            <div class="concept-text">
+              <h3>Beshburchak (Pentagon)</h3>
+              <p>5 ta tomoni bor.</p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">⚙️</div>
+            <div class="concept-text">
+              <h3>Oltiburchak (Geksagon)</h3>
+              <p>6 ta tomoni bor (asalari uyasi).</p>
+            </div>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">🛑</div>
+            <div class="concept-text">
+              <h3>Sakkizburchak (Oktagon)</h3>
+              <p>8 ta tomoni bor (to‘xtash belgisi).</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="orange-btn" id="startTestBtn2">
+          📝 Test ishlash (Yassi shakllar)
+        </button>
+      </div>
+
+      <!-- 6. HAJMLI SHAKLLAR (3-bo'lim) -->
+      <div id="hajmliPage" class="page">
+        <button class="back-home orange-outline-btn" id="backFromHajmli">
+          ← Ortga
+        </button>
+        <h2>Hajmli shakllar</h2>
+
+        <div class="info-box">
+          <strong>🧊 3D shakllar</strong> – uch o‘lchamli (bo‘yi, eni va
+          balandligi bor) geometrik jismlar.
+        </div>
+
+        <div class="cards-grid">
+          <div class="concept-card">
+            <div class="concept-icon-3d">
+              <div class="shape-3d cube">
+                <div class="side front"></div>
+                <div class="side back"></div>
+                <div class="side right"></div>
+                <div class="side left"></div>
+                <div class="side top"></div>
+                <div class="side bottom"></div>
+              </div>
+            </div>
+            <div class="concept-text">
+              <h3>Kub (Cube)</h3>
+              <p>
+                Hamma tomoni teng kvadratlardan iborat. Misol: O'yin soqqasi.
+              </p>
+            </div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-icon-3d">
+              <div class="shape-3d sphere"></div>
+            </div>
+            <div class="concept-text">
+              <h3>Shar (Sphere)</h3>
+              <p>Mutlaqo yumaloq shakl. Misol: Futbol to'pi, Yer shari.</p>
+            </div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-icon-3d">
+              <div class="shape-3d cylinder">
+                <div class="cyl-side"></div>
+                <div class="cyl-top"></div>
+                <div class="cyl-bottom"></div>
+              </div>
+            </div>
+            <div class="concept-text">
+              <h3>Silindr (Cylinder)</h3>
+              <p>Asosi va tepasi doira shaklida. Misol: Gazli suv bankasi.</p>
+            </div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-icon-3d">
+              <div class="shape-3d cone">
+                <div class="cone-side"></div>
+                <div class="cone-base"></div>
+              </div>
+            </div>
+            <div class="concept-text">
+              <h3>Konus (Cone)</h3>
+              <p>Uchi bitta nuqtada birlashgan. Misol: Muzqaymoq idishi.</p>
+            </div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-icon-3d">
+              <div class="shape-3d pyramid">
+                <div class="side p-front"></div>
+                <div class="side p-back"></div>
+                <div class="side p-right"></div>
+                <div class="side p-left"></div>
+                <div class="side p-bottom"></div>
+              </div>
+            </div>
+            <div class="concept-text">
+              <h3>Piramida (Pyramid)</h3>
+              <p>Asosi kvadrat, yonlari uchburchak. Misol: Misr ehromlari.</p>
+            </div>
+          </div>
+
+          <div class="concept-card">
+            <div class="concept-icon-3d">
+              <div class="shape-3d cuboid">
+                <div class="side front"></div>
+                <div class="side back"></div>
+                <div class="side right"></div>
+                <div class="side left"></div>
+                <div class="side top"></div>
+                <div class="side bottom"></div>
+              </div>
+            </div>
+            <div class="concept-text">
+              <h3>Parallelepiped</h3>
+              <p>G'ishtsimon shakl. Misol: Kitob yoki gugurt qutisi.</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="orange-btn" id="startTestBtn3">
+          📝 Test ishlash (Hajmli shakllar)
+        </button>
+      </div>
+
+      <!-- 7. TEST SAHIFASI (Universal) -->
+      <div id="testPage" class="page">
+        <button class="back-home orange-outline-btn" id="backFromTest">
+          ← Testni tark etish
+        </button>
+        <div class="test-timer" id="timerDisplay">30:00</div>
+        <form id="testForm"></form>
+        <button class="orange-btn" id="submitTestBtn">Testni yakunlash</button>
+        <div id="testResultBox" class="test-result"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
