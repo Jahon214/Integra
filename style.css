@@ -311,7 +311,7 @@ body {
     background: #fef8f0;
     border-radius: 24px;
     padding: 18px;
-    border: 1px solid #FFD8A8;
+    border: 1px solid rgb(254, 152, 152);
     display: flex;
     gap: 16px;
     align-items: flex-start;
@@ -357,7 +357,7 @@ body {
 
 .concept-card:hover {
     transform: translateX(8px) scale(1.02);
-    border-color: #FF8C00;
+    border-color: #6024b5;
     box-shadow: 0 10px 25px rgba(255,140,0,0.2);
     background: white;
 }
